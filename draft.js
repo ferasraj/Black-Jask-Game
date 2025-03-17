@@ -1,11 +1,12 @@
-let arrGame = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-let newCard = [];
+let hasCom = false;
+let givCer = false;
 
-let firstCard = Math.floor(Math.random() * arrGame.length);
-let secondCard = Math.floor(Math.random() * arrGame.length);
-let randomNumber = firstCard + secondCard;
-let conunt = 0;
+if (hasCom || givCer) {
+  genCer();
+} else {
+  console.log("Certificate Not Generated");
+}
 
-console.log(randomNumber);
-let cards = [firstCard, secondCard];
-cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1];
+function genCer() {
+  console.log("Generating Certificate");
+}
