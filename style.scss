@@ -1,12 +1,19 @@
+// Variables
+$primary-color: goldenrod;
+$background-color: #03481c;
+$font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+
+// Reset and Base Styles
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+// Body Styles
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: $font-family;
   background: url(./green.jpg);
   background-size: cover;
   color: white;
@@ -20,8 +27,9 @@ body {
   justify-content: center;
 }
 
+// Typography
 h1 {
-  color: goldenrod;
+  color: $primary-color;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -34,27 +42,32 @@ p {
   font-style: italic;
 }
 
+// Button Styles
 button {
-  color: #03481c;
+  color: $background-color;
   width: 150px;
   padding: 10px;
   border-radius: 5px;
-  background-color: goldenrod;
+  background-color: $primary-color;
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: -4px;
+  margin: {
+    top: 10px;
+    bottom: -4px;
+  }
   transition: transform 0.3s ease;
-}
-button:hover {
-  transform: scale(1.1);
-}
-button:active {
-  transform: scale(0.95);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 #newCard-btn {
   margin-bottom: 10px;
-} /*# sourceMappingURL=style.css.map */
+}

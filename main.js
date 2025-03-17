@@ -1,3 +1,7 @@
+let player = {
+  name: "Feras",
+  chip: 145,
+};
 let cards = [];
 let sum = 0;
 let hasBlackJack = false;
@@ -7,17 +11,19 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("card-el");
 
-console.log(cards);
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + ": $" + player.chip;
 
 function getRandomCard() {
   for (let i = 0; i < 2; i++) {
     let randomNum = Math.floor(Math.random() * 13) + 1;
     if (randomNum === 1) {
-      randomNum = 11;
+      return 11;
     } else if (randomNum > 10) {
-      randomNum = 10;
+      return 10;
+    } else {
+      return randomNum;
     }
-    return randomNum;
   }
 }
 function startGame() {
@@ -27,7 +33,6 @@ function startGame() {
   cards = [firstCard, secondCard];
   sum = firstCard + secondCard;
   renderGame();
-  console.log(cards);
 }
 
 function renderGame() {
@@ -56,6 +61,5 @@ function newCard() {
     sum += card;
     cards.push(card);
     renderGame();
-    console.log(cards);
   }
 }
